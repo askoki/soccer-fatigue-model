@@ -3,6 +3,7 @@ from datetime import datetime
 from typing import Tuple
 
 
+
 class ComputationError(Exception):
     def __init__(self, message, euler_step=1):
         self.message = message

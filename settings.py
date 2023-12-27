@@ -8,6 +8,7 @@ INTERIM_DATA_DIR = os.path.join(DATA_DIR, 'interim')
 RAW_DATA_DIR = os.path.join(DATA_DIR, 'raw')
 
 REPORTS_DIR = os.path.join(ROOT_DIR, 'reports')
+TABLES_DIR = os.path.join(REPORTS_DIR, 'tables')
 FIGURES_DIR = os.path.join(REPORTS_DIR, 'figures')
 NELDER_MEAD_DIR = os.path.join(REPORTS_DIR, 'nelder-mead')
 PSO_DIR = os.path.join(REPORTS_DIR, 'pso')

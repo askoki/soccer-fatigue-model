@@ -43,8 +43,7 @@ class DataHolder:
                 'weight': player_weight,
                 'total_w': int(0.5 * player_weight * p_match_df.speed_ms.max() ** 2),
             }
-
-            m_ad_interp = interp1d(p_df.second.values, p_df.m_ad_w.values, kind='linear', fill_value='extrapolate')
+            m_ad_interp = interp1d(p_df.second.values, p_df.m_ad_w.values, kind='next', fill_value='extrapolate')
             p_df = p_df.drop_duplicates(subset='second')
             player_dict: PlayerMatchMeasurement = {
                 'seconds': p_df.second.values,
@@ -60,6 +59,13 @@ class DataHolder:
 
             # Add matches
             for idx, match_df in p_match_df.groupby('date'):
+                match_df.loc[:, 'previous_t'] = match_df.second.shift(1).fillna(-1)
+                match_df.loc[:, 'dt'] = match_df.second - match_df.previous_t
+
+                # Trim halftime gap
+                ht_gap = match_df[match_df.dt > 100].squeeze()
+                if ht_gap.shape[0] > 0:
+                    match_df.loc[match_df.second >= ht_gap.second, 'second'] -= ht_gap['dt']
                 num_minutes = int((match_df.second.max() - match_df.second.min()) / 60)
 
                 m_ad_match_interp = interp1d(match_df.second.values, match_df.m_ad_w.values, kind='linear', fill_value='extrapolate')

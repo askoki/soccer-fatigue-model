@@ -1,14 +1,11 @@
 NUM_RUNS = 10
 
 BOUNDS_WORK_ALPHA = (1e-5, 1e-3)
-BOUNDS_WORK_BETA = (1e-2, 5e-2)
-BOUNDS_WORK_F = (1e-5, 1e-1)
-BOUNDS_WORK_R = (1e-5, 1e-1)
-BOUNDS_GAMMA = (0, 1)
+BOUNDS_WORK_BETA = (1e-5, 1e-2)
+BOUNDS_WORK_F = (1e-3, 5)
+BOUNDS_WORK_R = (1e-3, 5)
 
 pso_init_alpha = BOUNDS_WORK_ALPHA[0] + BOUNDS_WORK_ALPHA[1] / 2
 pso_init_beta = BOUNDS_WORK_BETA[0] + BOUNDS_WORK_BETA[1] / 2
 pso_init_f = BOUNDS_WORK_F[0] + BOUNDS_WORK_F[1] / 2
 pso_init_r = BOUNDS_WORK_R[0] + BOUNDS_WORK_R[1] / 2
-pso_init_gamma = BOUNDS_GAMMA[0] + BOUNDS_GAMMA[1] / 2
-
