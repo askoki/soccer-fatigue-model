@@ -15,7 +15,7 @@ from src.vizualization.helpers import load_plt_style
 from src.vizualization.related_work.calculate_helpers import get_least_square_results, sns_dy_dt
 from settings import FIGURES_DIR, RAW_DATA_DIR
 
-handgrip_df = pd.read_csv(os.path.join(RAW_DATA_DIR, '1_liu_max_handgrip.csv'))
+handgrip_df = pd.read_csv(os.path.join(RAW_DATA_DIR, '1_LBY_max_handgrip.csv'))
 handgrip_df = handgrip_df.rename(columns={'t (s)': 't', 'F (N)': 'F'})
 m_ad_data = MReqDict(x=[0, 60, 120, 180], y=[435, 435, 435, 435], label='model_vs_sns_max_handgrip')
 m_ad = interp1d(m_ad_data['x'], m_ad_data['y'], kind='nearest', fill_value='extrapolate')
@@ -56,7 +56,7 @@ print(f'R^2={r2_fit}')
 print(f'R^2={r2_fit_sns}')
 
 fig, ax = plt.subplots(constrained_layout=True, figsize=(5, 2))
-ax.scatter(handgrip_df.t, handgrip_df.F, color='black', s=8, label='Measured (Liu)')
+ax.scatter(handgrip_df.t, handgrip_df.F, color='black', s=8, label='Measured (LBY)')
 ax.plot(T, m_ad(T), label='$M_{AD}$', linestyle='--')
 ax.plot(T, m_a_sns, label='SNS $M_{A}$', linestyle='-', linewidth=2)
 
