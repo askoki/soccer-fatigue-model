@@ -11,7 +11,7 @@ from src.features.optimisation.processing import PlayerDataProcessor
 from src.features.optimisation.results_helpers import create_opt_var_df, IndagoResults, create_run_results_df
 from src.features.typing import MuscleFatigueRecovery
 from src.features.utils import log, get_duration_hour_min_sec, set_save_path_arg_parser
-from src.models.constants import NUM_RUNS, BOUNDS_WORK_ALPHA, BOUNDS_WORK_BETA, BOUNDS_WORK_F, BOUNDS_WORK_R, BOUNDS_M0
+from src.models.constants import NUM_RUNS, BOUNDS_WORK_ALPHA, BOUNDS_WORK_BETA, BOUNDS_WORK_F, BOUNDS_WORK_R
 
 if __name__ == '__main__':
     save_folder_name = set_save_path_arg_parser()
