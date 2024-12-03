@@ -14,7 +14,7 @@ from src.features.typing import MuscleFatigueRecovery
 from src.features.utils import log, set_save_path_arg_parser
 from src.vizualization.helpers import load_plt_style
 
-is_pso, folder_path = set_save_path_arg_parser()
+folder_path = set_save_path_arg_parser()
 load_name = 'pso'
 
 load_plt_style()
