@@ -59,6 +59,6 @@ with open(os.path.join(TABLES_DIR, 'variation_through_runs_one_player_table.tex'
         tex_df = tex_df.round(5)
         print('\midrule')
         print(
-            f'${int(tex_df.run_cnt+1)}$ & ${int(tex_df.n_evals)}$ & ${tex_df.alpha:.5f}$ & ${tex_df.beta:.5f}$ & ${tex_df.F:.5f}$ & ${tex_df.R:.5f}$ & ${format_number(tex_df.cost_f)}$ & ${tex_df.r2:.5f}$\\\\'
+            f'${int(tex_df.run_cnt+1)}$ & ${int(tex_df.n_evals)}$ & ${format_number(tex_df.alpha)}$ & ${format_number(tex_df.beta)}$ & ${format_number(tex_df.F)}$ & ${format_number(tex_df.R)}$ & ${tex_df.cost_f:.0f}$ & ${tex_df.r2:.2f}$\\\\'
         )
 sys.stdout = sys.__stdout__

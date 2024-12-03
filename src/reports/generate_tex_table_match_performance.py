@@ -85,6 +85,6 @@ with open(os.path.join(TABLES_DIR, 'match_performance_table.tex'), 'w') as f:
     for idx, tex_df in all_players_results_df.iterrows():
         print('\midrule')
         print(
-            f'{tex_df.player} & ${int(tex_df.num_min)}$ & ${format_number(tex_df.cost_f)}$ & ${tex_df.r2_match1:.5f}$ & ${tex_df.r2_match2:.5f}$ & ${tex_df.r2_match3}$ & ${tex_df.r2_match4}$& ${tex_df.r2_mean}$\\\\'
+            f'{tex_df.player} & ${int(tex_df.num_min)}$ & ${format_number(tex_df.cost_f)}$ & ${tex_df.r2_match1:.2f}$ & ${tex_df.r2_match2:.2f}$ & ${tex_df.r2_match3:.2f}$ & ${tex_df.r2_match4:.2f}$& ${tex_df.r2_mean:.2f}$\\\\'
         )
 sys.stdout = sys.__stdout__

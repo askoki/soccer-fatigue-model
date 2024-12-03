@@ -62,6 +62,6 @@ with open(os.path.join(TABLES_DIR, 'best_runs_table.tex'), 'w') as f:
     for idx, tex_df in all_players_results_df.iterrows():
         print('\midrule')
         print(
-            f'{tex_df.player} & ${int(tex_df.n_evals)}$ & ${int(tex_df.m0)}$ & ${tex_df.alpha:.5f}$ & ${tex_df.beta:.5f}$ & ${tex_df.F:.5f}$ & ${tex_df.R:.5f}$ & ${format_number(tex_df.cost_f)}$ & ${tex_df.r2:.5f}$\\\\'
+            f'{tex_df.player} & ${int(tex_df.n_evals)}$ & ${int(tex_df.m0)}$ & ${format_number(tex_df.alpha)}$ & ${format_number(tex_df.beta)}$ & ${format_number(tex_df.F)}$ & ${format_number(tex_df.R)}$ & ${format_number(tex_df.cost_f)}$ & ${tex_df.r2:.2f}$\\\\'
         )
 sys.stdout = sys.__stdout__
