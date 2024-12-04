@@ -16,8 +16,8 @@ from src.vizualization.related_work.calculate_helpers import sns_dy_dt, get_leas
 test_df = pd.read_csv(os.path.join(RAW_DATA_DIR, '2_soccer_specific_drill_1min.csv'))
 test_df = test_df.rename(columns={'t (s)': 't', 'velocity (km/h)': 'v'})
 m_ad_data = MReqDict(
-    x=[0, 4, 10, 18, 27, 34, 43, 47, 58, 60],
-    y=[3, 3, 20, 1, 17, 2, 15, 2, 16, 2],
+    x=[0, 4, 5.5, 7, 9, 18, 27, 34, 38, 39.5, 42.5, 47, 52.5, 54, 58, 60],
+    y=[3, 3, 20, 12, 20, 1, 17, 2, 15, 9, 15, 1, 16, 8, 15, 2],
     label='soccer_specific_1min_drill'
 )
 m_ad = interp1d(m_ad_data['x'], m_ad_data['y'], kind='next', fill_value='extrapolate')
